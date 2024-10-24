@@ -7,7 +7,7 @@ foreach (string integrante in familia) {
     {
         Console.WriteLine("El nombre {0} que busca si se enceuntra en la lista ", integrante);
         int index = Array.IndexOf(familia, bnombre);
-        Console.WriteLine("El espacio que se encuentra en la casilla numero " + index);
+        Console.WriteLine("El nombre se encuentra en la casilla numero " + index);
         Environment.Exit(0);
     }
 }

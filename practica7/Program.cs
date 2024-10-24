@@ -1,28 +1,29 @@
-﻿char resp ;
-do {
-    int i = 0 ;
-    Console.WriteLine("Ingrese cuantos valores desea tener");
-    i = int.Parse(Console.ReadLine());
-    int[] numeros = new int[i];
-    for (int j = 0; j < numeros.Length; j++)
-    {
-        do
-        {
-            Console.WriteLine("Ingrese un numero entero que obtenga el valor [{0}]", j);
-            numeros[j] = int.Parse(Console.ReadLine());
+﻿using System.Drawing;
 
-        }while (numeros[j] > 0);
+char resp;
+int posicion = 0;
+int[] num = new int[0];
+do
+{
+    int datos;
+    
+    Console.WriteLine("Ingrese un numero: ");
+    while (!int.TryParse(Console.ReadLine(), out datos)) {
+        Console.Write("Error: ingrese un numero entero: ");
     }
-
-
-
-
-
-
+    Array.Resize(ref num, num.Length+1);
+    num[posicion]=datos;
+    posicion++;
     do
     {
         Console.WriteLine("Desea continuar? (S/N)");
         resp = char.Parse(Console.ReadLine().ToUpper());
     }while (resp != 'S' && resp !='N' ); 
 }while(resp == 'S');
+foreach (int o in num)
+{
+    Console.Write(o + "\t");
+}
+
+
 Console.WriteLine("Fin");
